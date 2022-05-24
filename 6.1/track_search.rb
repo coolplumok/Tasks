@@ -35,13 +35,7 @@ end
 
 # Takes an array of tracks and prints them to the terminal
 def print_tracks(tracks)
-  size    = tracks.length
-  index   = 0.to_i
-  
-  while index < size do
-    print_track tracks[index]
-    index += 1
-  end
+  tracks.each{ |e| print_track e }
   # Use a while loop with a control variable index
   # to print each track. Use tracks.length to determine how
   # many times to loop.

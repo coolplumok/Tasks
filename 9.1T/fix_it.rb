@@ -12,29 +12,20 @@ def write(aFile, number)
 end
     
     # Read the data from the file and print out each line
-def read(aFile)
-    # Defensive programming:
-    count = aFile.gets.chomp! # remove \n
-    # correct function call to is_numeric?
-    if (is_numeric?(count))
-        count = count.to_i
-    else
-        count = 0
-        puts "Error: first line of file is not a number"
-    end
-    index = 0
-    while (count > index) # correct the relation
-        line = aFile.gets
-        puts "Line read: " + line
-        # increase index
-        index += 1
+def read(f)
+    f.each_line do |line|
+        if is_numeric? line
+            puts "Line read: #{line}"
+        else
+            puts "Line is not number: #{line}"
+        end
     end
 end
     
     # Write data to a file then read it in and print it out
 def main
-    aFile = File.new("mydata.txt", "w+") # open for reading/writing
-    write(aFile, 10)
+    aFile = File.open("mydata.txt", "r") # open for reading/writing
+    # write(aFile, 10)
     # set file position to beginning
     read(aFile)
     aFile.close
