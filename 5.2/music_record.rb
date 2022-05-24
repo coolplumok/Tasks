@@ -44,7 +44,7 @@ def print_album(album)
 	# insert lines here
 	puts album.title
 	puts album.artist
-  puts album.genre
+  puts "Genre is #{album.genre}"
   puts $genre_names[album.genre]
 end
 

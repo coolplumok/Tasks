@@ -14,7 +14,7 @@ end
     # Read the data from the file and print out each line
 def read(f)
     f.each_line do |line|
-        if is_numeric? line
+        if is_numeric? line.chomp
             puts "Line read: #{line}"
         else
             puts "Line is not number: #{line}"
