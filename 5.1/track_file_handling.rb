@@ -13,7 +13,7 @@ def read_tracks(music_file)
   count = music_file.gets().to_i()
   tracks = Array.new()
   i = 0.to_i
-#Tracks is a array
+  #Tracks is a array
   while i < count do   # Put a while loop here which increments an index to read the tracks
     track = read_track(music_file)
     tracks << track
@@ -56,7 +56,7 @@ end
 def main()
   a_file = File.new("input.txt", "r") # open for reading
   print_tracks(a_file)
-  read_tracks(a_file)
+  # read_tracks(a_file)
   a_file.close()
 end
 #Call read_tracks after line 58.

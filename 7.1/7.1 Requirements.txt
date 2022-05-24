@@ -1,0 +1,35 @@
+Text Based Music Application must have the following functionality:
+
+Display a menu that offers the user the following options:
+
+1. Read in Albums
+
+2. Display Albums
+
+3. Select an Album to play
+
+4. Update an existing Album
+
+5. Exit the application
+
+Menu option 1 should prompt the user to enter a filename of a file that contains the following information:
+
+·The number of albums 
+
+·The first artist name
+
+·The first album name
+
+·The genre of the album
+
+·The number of tracks (up to a maximum of 15)
+
+·The name and file location (path) of each track.
+
+·The album information for the remaining albums.
+
+Menu option 2 should allow the user to either display all albums or all albums for a particular genre. The albums should be listed with a unique album number which can be used in Option 3 to select an album to play. The album number should serve the role of a ‘primary key’ for locating an album. But it is allocated internally by your program, not by the user.
+
+Menu option 3 should prompt the user to enter the primary key (or album number) for an album as listed using Menu option 2.If the album is found the program should list all the tracks for the album, along with track numbers. The user should then be prompted to enter a track number. If the track number exists, then the system should display the message “Playing track ” then the track name, “ from album ” then the album name. You may or may not call an external program to play the track, but if not the system should delay for several seconds before returning to the main menu. 
+
+Menu option 4 should allow the user to enter a unique album number and change its title or genre. The updated album should then be displayed to the user and the user prompted to press enter to return to the main menu (you do not need to update the file).
