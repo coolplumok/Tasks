@@ -31,12 +31,12 @@ end
 
 # Takes an array of tracks and prints them to the terminal
 def print_tracks(music_file)
-  read_tracks(music_file)
-  size = read_tracks.length
-  index = 0.to_i
+  tracks  = read_tracks(music_file)
+  size    = tracks.length
+  index   = 0.to_i
   
   while index < size do
-    puts tracks[index]
+    print_track tracks[index]
     index += 1
   end
   # Use a while loop with a control variable index
@@ -48,8 +48,8 @@ end
 
 # Takes a single track and prints it to the terminal
 def print_track(track)
-  puts('Track title is: ' + track.title)
-	puts('Track file location is: ' + track.location)
+  puts track.name
+	puts track.location
 end
 
 # Open the file and read in the tracks then print them
