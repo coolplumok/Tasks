@@ -13,12 +13,15 @@ end
     
     # Read the data from the file and print out each line
 def read(f)
-    f.each_line do |line|
-        if is_numeric? line.chomp
-            puts "Line read: #{line}"
-        else
-            puts "Line is not number: #{line}"
+    count  = f.gets().to_i
+    if is_numeric? count.to_s
+        i = 0.to_i
+        while i < count do
+            puts "Line read: #{f.gets}"
+            i += 1
         end
+    else
+        puts "First line is not number."
     end
 end
     

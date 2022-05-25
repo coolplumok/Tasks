@@ -10,7 +10,7 @@ $genre_names = ['Null', 'Pop', 'Classic', 'Jazz', 'Rock']
 
 class Album
 # NB: you will need to add tracks to the following and the initialize()
-	attr_accessor :title, :artist, :genre
+	attr_accessor :title, :artist, :genre, :tracks
 
 # complete the missing code:
 	def initialize (title, artist, genre)
@@ -49,7 +49,8 @@ def read_file(music_file)
 	  tracks << track
 	  i += 1
   end
-  return [ album, tracks ]
+  album.tracks = tracks
+  return album
 end
 
 # Takes an array of tracks and prints them to the terminal
@@ -80,6 +81,7 @@ def print_album(album)
   puts album.artist
   puts "Genre is #{album.genre}"
   puts $genre_names[album.genre.to_i]
+  album.tracks.each{ |track| print_track track }
 end
 
 # Takes a single track and prints it to the terminal
@@ -92,9 +94,8 @@ end
 
 def main()
 	music_file = File.new("album.txt", "r")
-	file = read_file(music_file)
-	print_album file[0]
-	print_tracks file[1]
+	album = read_file music_file
+	print_album album
 	music_file.close()
 end
 
